@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Totem Player
+Exec=totemplayer
