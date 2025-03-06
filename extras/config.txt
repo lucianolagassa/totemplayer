@@ -1,0 +1,9 @@
+framebuffer_width=1280
+framebuffer_height=720
+
+hdmi_force_hotplug=1
+hdmi_cvt=1280 720 60 3
+hdmi_group:1=2
+hdmi_mode:1=85
+
+display_auto_detect=0
