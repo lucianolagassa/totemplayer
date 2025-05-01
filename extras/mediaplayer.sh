@@ -7,5 +7,6 @@ then
     omxplayer -o both --timeout 0 --threshold 15 $*
 else
     cvlc --fullscreen --no-mouse-events --no-osd $*
+    #cvlc --fullscreen --no-mouse-events --no-osd --one-instance $*
 fi
 

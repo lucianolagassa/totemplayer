@@ -23,8 +23,13 @@ then
     sudo apt-get -y install libavutil
     sudo apt-get -y install libswresample
     sudo apt-get -y install libavformat
+    sudo apt-get -y install libgles-dev
+    sudo apt-get -y install libegl-dev
+    sudo ln -s /usr/lib/arm-linux-gnueabihf/libGLESv2.so /usr/lib/libbrcmGLESv2.so
+    sudo ln -s /usr/lib/arm-linux-gnueabihf/libEGL.so /usr/lib/libbrcmEGL.so
     ##
     ## Install Omxplayer
+    wget --no-check-certificate -w 4 -O omxplayer_armhf.deb http://archive.raspberrypi.org/debian/pool/main/o/omxplayer/omxplayer_20190723+gitf543a0d-1+bullseye_armhf.deb
     wget --no-check-certificate -w 4 -O omxplayer_armhf.deb http://archive.raspberrypi.org/debian/pool/main/o/omxplayer/omxplayer_20190723+gitf543a0d-1+bullseye_armhf.deb
     sudo dpkg -i omxplayer_armhf.deb
     rm omxplayer_armhf.deb
