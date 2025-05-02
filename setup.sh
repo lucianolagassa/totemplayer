@@ -85,7 +85,7 @@ sudo chmod +x /usr/bin/totemplayer
 
 ## Custom Splash
 sudo rm /usr/share/plymouth/themes/pix/splash.png
-sduo cp images/splash.png /usr/share/plymouth/themes/pix/splash.png
+sudo cp images/splash.png /usr/share/plymouth/themes/pix/splash.png
 sudo chmod 755 /usr/share/plymouth/themes/pix/splash.png
 
 ## Custom Wallpaper
