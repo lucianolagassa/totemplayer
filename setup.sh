@@ -45,13 +45,19 @@ sudo cp images/splash.png /usr/share/plymouth/themes/pix/splash.png
 sudo chmod 755 /usr/share/plymouth/themes/pix/splash.png
 ##
 
-## Custom Wallpaper
-cp images/wallpaper.png $HOME/.config/wallpaper.png
-chmod 755 $HOME/.config/wallpaper.png
-pcmanfm --set-wallpaper $HOME/.config/wallpaper.png
+## Custom Wallpaper (Universal)
+#cp images/wallpaper.png $HOME/.config/wallpaper.png
+#chmod 755 $HOME/.config/wallpaper.png
+#pcmanfm --set-wallpaper $HOME/.config/wallpaper.png
 ##
 
-## Player Config
+## Custom Wallpaper (TRU)
+cp images/wallpaper.png $HOME/.config/wallpaper_tru.png
+chmod 755 $HOME/.config/wallpaper_tru.png
+pcmanfm --set-wallpaper $HOME/.config/wallpaper_tru.png
+##
+
+## Player Config (TRU)
 #echo "twitch.tv/trutecnica" > $HOME/player.txt
 #echo "https://vivo.solumedia.com:19360/unimar/unimar.m3u8" > $HOME/player.txt
 echo "rtmp://nodo7.arcast.live/unimar/unimar" > $HOME/player.txt
