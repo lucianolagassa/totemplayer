@@ -38,6 +38,13 @@ sudo chmod 755 /usr/bin/totemplayer
 sudo chmod +x /usr/bin/totemplayer
 ##
 
+## Player Config (TRU)
+#echo "twitch.tv/trutecnica" > $HOME/player.txt
+#echo "https://vivo.solumedia.com:19360/unimar/unimar.m3u8" > $HOME/player.txt
+echo "rtmp://nodo7.arcast.live/unimar/unimar" > $HOME/player.txt
+chmod 755 $HOME/player.txt
+##
+
 ## Custom Splash (Admin)
 ##sudo echo "disable_splash=1" >> /boot/firmware/config.txt
 ###sudo echo -n " logo.nologo" >> /boot/firmware/cmdline.txt
@@ -80,7 +87,7 @@ cp images/wallpaper.png $HOME/.config/wallpaper.png
 chmod 755 $HOME/.config/wallpaper.png
 pcmanfm --set-wallpaper $HOME/.config/wallpaper.png
 echo "Esperando 3 segundos para aplicar el fondo de pantalla..."
-sleep 3
+#sleep 3
 #desktop_config="$HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf"
 #desktop_config="$HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf"
 #desktop_config="$HOME/.config/pcmanfm/LXDE-pi/desktop-items-NOOP-1.conf"
@@ -97,11 +104,4 @@ echo "show_documents=0" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
 echo "show_trash=0" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
 echo "show_mounts=0" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
 pkill pcmanfm
-##
-
-## Player Config (TRU)
-#echo "twitch.tv/trutecnica" > $HOME/player.txt
-#echo "https://vivo.solumedia.com:19360/unimar/unimar.m3u8" > $HOME/player.txt
-echo "rtmp://nodo7.arcast.live/unimar/unimar" > $HOME/player.txt
-chmod 755 $HOME/player.txt
 ##
