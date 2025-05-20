@@ -9,53 +9,52 @@ then
 fi
 ##
 
-## Instalacion de Dependencias
+## Display
+export DISPLAY=:0.0
+##
+
+## Setup (Admin)
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install vlc
 ##
 
-## Custom MenuBar
+## Custom Panel (Admin)
 sudo sed -i "s/autohide=.*/autohide=1/" /etc/xdg/lxpanel/LXDE-pi/panels/panel
 sudo sed -i "s/height=.*/height=0/" /etc/xdg/lxpanel/LXDE-pi/panels/panel
 sudo sed -i "s/heightwhenhidden=.*/heightwhenhidden=0/" /etc/xdg/lxpanel/LXDE-pi/panels/panel
 sudo sed -i '/^[^#].*wfrespawn wf-panel-pi/ s/^/# /' /etc/wayfire/defaults.ini
 ##
 
-## Auto Run
+## Media Player (Admin)
+sudo cp extras/mediaplayer.sh /usr/bin/mediaplayer
+sudo chmod 755 /usr/bin/mediaplayer
+sudo chmod +x /usr/bin/mediaplayer
+##
+
+## Totem Player (Admin)
+sudo cp extras/totemplayer.sh /usr/bin/totemplayer
+sudo chmod 755 /usr/bin/totemplayer
+sudo chmod +x /usr/bin/totemplayer
+##
+
+## Custom Splash (Admin)
+sudo rm /usr/share/plymouth/themes/pix/splash.png
+sudo cp images/splash.png /usr/share/plymouth/themes/pix/splash.png
+sudo chmod 755 /usr/share/plymouth/themes/pix/splash.png
+##
+
+## Autostart
 mkdir -p $HOME/.config/autostart
 cp extras/autorun.txt $HOME/.config/autostart/player.desktop
 chmod 755 $HOME/.config/autostart/player.desktop
 chmod +x $HOME/.config/autostart/player.desktop
 ##
 
-## Media Player
-sudo cp extras/mediaplayer.sh /usr/bin/mediaplayer
-sudo chmod 755 /usr/bin/mediaplayer
-sudo chmod +x /usr/bin/mediaplayer
-##
-
-## Totem Player
-sudo cp extras/totemplayer.sh /usr/bin/totemplayer
-sudo chmod 755 /usr/bin/totemplayer
-sudo chmod +x /usr/bin/totemplayer
-##
-
-## Custom Splash
-sudo rm /usr/share/plymouth/themes/pix/splash.png
-sudo cp images/splash.png /usr/share/plymouth/themes/pix/splash.png
-sudo chmod 755 /usr/share/plymouth/themes/pix/splash.png
-##
-
-## Custom Wallpaper (Universal)
-#cp images/wallpaper.png $HOME/.config/wallpaper.png
-#chmod 755 $HOME/.config/wallpaper.png
-#pcmanfm --set-wallpaper $HOME/.config/wallpaper.png
-##
-
-## Custom Wallpaper (TRU)
+## Custom Wallpaper
 cp images/wallpaper.png $HOME/.config/wallpaper.png
 chmod 755 $HOME/.config/wallpaper.png
+pcmanfm --set-wallpaper $HOME/.config/wallpaper.png
 pcmanfm --set-wallpaper $HOME/.config/wallpaper.png
 ##
 
