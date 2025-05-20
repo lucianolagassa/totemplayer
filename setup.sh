@@ -60,6 +60,7 @@ chmod +x $HOME/.config/autostart/player.desktop
 ##
 
 ## Custom Panel
+pipanel taskbar
 sed -i 's/launcher_/#launcher_/' $HOME/.config/wf-panel-pi.ini
 echo "notify_enable=false" >> $HOME/.config/wf-panel-pi.ini
 echo "notify_timeout=1" >> $HOME/.config/wf-panel-pi.ini
@@ -68,14 +69,17 @@ echo "icon_size=1" >> $HOME/.config/wf-panel-pi.ini
 echo "autohide=true" >> $HOME/.config/wf-panel-pi.ini
 echo "minimal_height=0" >> $HOME/.config/wf-panel-pi.ini
 echo "autohide_duration=300" >> $HOME/.config/wf-panel-pi.ini
+mkdir -p $HOME/.config/lxpanel/LXDE-pi/panels
+cat  extras/panel.conf > $HOME/.config/lxpanel/LXDE-pi/panels/panel
 pkill wf-panel-pi
 ##
 
 ## Custom Desktop
-mkdir -p $HOME/.config/pcmanfm/LXDE-pi/
+mkdir -p $HOME/.config
 cp images/wallpaper.png $HOME/.config/wallpaper.png
 chmod 755 $HOME/.config/wallpaper.png
 pcmanfm --set-wallpaper $HOME/.config/wallpaper.png
+sleep 10
 #desktop_config=`ls $HOME/.config/pcmanfm/LXDE-pi/desktop-items*.conf`
 sed -i 's/desktop_bg/#desktop_bg/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
 sed -i 's/desktop_fg/#desktop_fg/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
