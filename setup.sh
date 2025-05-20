@@ -67,7 +67,7 @@ chmod +x $HOME/.config/autostart/player.desktop
 ##
 
 ## Custom Panel
-pipanel taskbar
+##pipanel taskbar
 sed -i 's/launcher_/#launcher_/' $HOME/.config/wf-panel-pi.ini
 echo "notify_enable=false" >> $HOME/.config/wf-panel-pi.ini
 echo "notify_timeout=1" >> $HOME/.config/wf-panel-pi.ini
