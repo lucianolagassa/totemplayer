@@ -47,6 +47,18 @@ sudo cp images/splash.png /usr/share/plymouth/themes/pix/splash.png
 sudo chmod 755 /usr/share/plymouth/themes/pix/splash.png
 ##
 
+## Custom Wallpaper (Universal)
+#cp images/wallpaper.png $HOME/.config/wallpaper.png
+#chmod 755 $HOME/.config/wallpaper.png
+#pcmanfm --set-wallpaper $HOME/.config/wallpaper.png
+##
+
+## Custom Wallpaper (TRU)
+cp images/wallpaper.png $HOME/.config/wallpaper.png
+chmod 755 $HOME/.config/wallpaper.png
+pcmanfm --set-wallpaper $HOME/.config/wallpaper.png
+##
+
 ## Custom Panel
 sed -i 's/launcher_/#launcher_/' $HOME/.config/wf-panel-pi.ini
 echo "notify_enable=false" >> $HOME/.config/wf-panel-pi.ini
@@ -60,10 +72,14 @@ pkill wf-panel-pi
 ##
 
 ## Custom Desktop
+mkdir -p $HOME/.config/pcmanfm/LXDE-pi/
 desktop_config=`ls $HOME/.config/pcmanfm/LXDE-pi/desktop-items*.conf`
 sed -i 's/desktop_bg/#desktop_bg/' $desktop_config
 sed -i 's/desktop_fg/#desktop_fg/' $desktop_config
 sed -i 's/desktop_shadow/#desktop_shadow/' $desktop_config
+sed -i 's/show_documents/#show_documents/' $desktop_config
+sed -i 's/show_trash/#show_trash/' $desktop_config
+sed -i 's/show_mounts/#show_mounts/' $desktop_config
 echo "desktop_bg=#FFFFFF" >> $desktop_config
 echo "desktop_fg=#FFFFFF" >> $desktop_config
 echo "desktop_shadow=#FFFFFF" >> $desktop_config
@@ -71,18 +87,6 @@ echo "show_documents=0" >> $desktop_config
 echo "show_trash=0" >> $desktop_config
 echo "show_mounts=0" >> $desktop_config
 pkill pcmanfm
-##
-
-## Custom Wallpaper (Universal)
-#cp images/wallpaper.png $HOME/.config/wallpaper.png
-#chmod 755 $HOME/.config/wallpaper.png
-#pcmanfm --set-wallpaper $HOME/.config/wallpaper.png
-##
-
-## Custom Wallpaper (TRU)
-cp images/wallpaper_tru.png $HOME/.config/wallpaper.png
-chmod 755 $HOME/.config/wallpaper.png
-pcmanfm --set-wallpaper $HOME/.config/wallpaper.png
 ##
 
 ## Player Config (TRU)
