@@ -39,9 +39,17 @@ sudo chmod +x /usr/bin/totemplayer
 ##
 
 ## Custom Splash (Admin)
-sudo rm /usr/share/plymouth/themes/pix/splash.png
-sudo cp images/splash.png /usr/share/plymouth/themes/pix/splash.png
-sudo chmod 755 /usr/share/plymouth/themes/pix/splash.png
+##sudo echo "disable_splash=1" >> /boot/firmware/config.txt
+###sudo echo -n " logo.nologo" >> /boot/firmware/cmdline.txt
+##sudo sed -i 's/console=tty1/console=tty3/' /boot/firmware/cmdline.txt
+##sudo sed -i 's/splash/logo.nologo/' /boot/firmware/cmdline.txt
+#sudo sed -i 's/exit 0/dmesg --console-off/' /etc/rc.local
+#sudo echo "exit 0" >> /etc/rc.local
+#sudo rm /usr/share/plymouth/themes/pix/splash.png
+#sudo cp images/splash.png /usr/share/plymouth/themes/pix/splash.png
+#sudo chmod -rw-r--r-- /usr/share/plymouth/themes/pix/splash.png
+#sudo cp /usr/share/plymouth/themes/pix/splash.png /usr/share/plymouth/themes/pix/splash_back.png
+#sudo cat splash.png > /usr/share/plymouth/themes/pix/splash.png
 ##
 
 ## Autostart
