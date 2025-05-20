@@ -79,20 +79,23 @@ mkdir -p $HOME/.config
 cp images/wallpaper.png $HOME/.config/wallpaper.png
 chmod 755 $HOME/.config/wallpaper.png
 pcmanfm --set-wallpaper $HOME/.config/wallpaper.png
-sleep 10
-#desktop_config=`ls $HOME/.config/pcmanfm/LXDE-pi/desktop-items*.conf`
-sed -i 's/desktop_bg/#desktop_bg/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
-sed -i 's/desktop_fg/#desktop_fg/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
-sed -i 's/desktop_shadow/#desktop_shadow/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
-sed -i 's/show_documents/#show_documents/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
-sed -i 's/show_trash/#show_trash/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
-sed -i 's/show_mounts/#show_mounts/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
-echo "desktop_bg=#FFFFFF" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
-echo "desktop_fg=#FFFFFF" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
-echo "desktop_shadow=#FFFFFF" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
-echo "show_documents=0" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
-echo "show_trash=0" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
-echo "show_mounts=0" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf
+echo "Esperando 3 segundos para aplicar el fondo de pantalla..."
+sleep 3
+#desktop_config="$HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf"
+#desktop_config="$HOME/.config/pcmanfm/LXDE-pi/desktop-items-HDMI-A-1.conf"
+#desktop_config="$HOME/.config/pcmanfm/LXDE-pi/desktop-items-NOOP-1.conf"
+sed -i 's/desktop_bg/#desktop_bg/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
+sed -i 's/desktop_fg/#desktop_fg/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
+sed -i 's/desktop_shadow/#desktop_shadow/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
+sed -i 's/show_documents/#show_documents/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
+sed -i 's/show_trash/#show_trash/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
+sed -i 's/show_mounts/#show_mounts/' $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
+echo "desktop_bg=#FFFFFF" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
+echo "desktop_fg=#FFFFFF" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
+echo "desktop_shadow=#FFFFFF" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
+echo "show_documents=0" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
+echo "show_trash=0" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
+echo "show_mounts=0" >> $HOME/.config/pcmanfm/LXDE-pi/desktop-items-*.conf
 pkill pcmanfm
 ##
 
